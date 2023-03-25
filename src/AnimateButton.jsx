@@ -2,11 +2,17 @@
 function AnimateButton(props) {
 
 function clickHandler(){
-    fetch(`http://localhost:8000/${props.categoryName}/${props.animationName}`)
-    .catch((error) => {
-        console.error("Error:", error);
-    });
-    
+    if (props.animationName == '') {
+        fetch(`http://localhost:8000/${props.categoryName}`)
+        .catch((error) => {
+            console.error("Error:", error);
+        }); 
+    } else {
+        fetch(`http://localhost:8000/${props.categoryName}/${props.animationName}`)
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+    } 
 }
 
 function color(i){
