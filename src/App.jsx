@@ -26,7 +26,7 @@ function App() {
           <u className="text-xl ">{key} Animations:</u>
             <div className="flex flex-wrap justify-start mx-32 my-5 gap-10">
               {
-                value.map((item, i) => <AnimateButton key={i} categoryName = {key} animationName = {item} i={i} />)
+                value.map((item, i) => <AnimateButton key={i} categoryName = {key} animationName = {item.includes(" ") ? "": item} i={i} />)
               }
             </div>
         </div>
